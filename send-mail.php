@@ -1,7 +1,8 @@
 <?php
-  $nome = $_POST['nome'];
+  $nome = $_POST['name'];
+  $sobrenome = $_POST['surname'];
   $email= $_POST['email'];
-  $mensagem= $_POST['mensagem'];
+  $mensagem= $_POST['message'];
   $to = "f.m.kmacedo@hotmail.com.br";
   $assunto = "Mensagem de ".$email.com
   mail($to,$assunto,$mensagem);
