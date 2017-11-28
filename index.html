@@ -181,7 +181,8 @@
                       <textarea rows="4" name="message" id="message" placeholder="Mensagem" required="required" class="form-control"></textarea>
                     </div>
                     <div class="text-center">
-                      <input type="submit" name="name" value="Enviar Mensagem" class="btn btn-primary btn-block">
+                      <!--input type="submit" name="name" value="Enviar Mensagem" class="btn btn-primary btn-block"-->
+			<button onclick="sendMail(); return false" class="btn btn-primary btn-block">Enviar Mensagem</button> 
                     </div>
                   </div>
                 </form>
@@ -234,7 +235,14 @@
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
-    
+	    
+    function sendMail() {
+ +	var link = "mailto:f.m.kmacedo@hotmail.com"
+ +	     + "&subject=" + escape("Mensagem do site")
+ +	     + "&body=" + escape(document.getElementById('name').value)+" "
+ +			 + escape(document.getElementById('surname').value)+"\r\n"
+ +			 + escape(document.getElementById('message').value);
+ +	window.location.href = link;}
     </script>
   </body>
 </html>
