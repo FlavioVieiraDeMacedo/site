@@ -162,26 +162,27 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="name">Nome *</label>
-                          <input type="text" name="name" placeholder="Nome" required="required" class="form-control">
+                          <input type="text" name="name" id="name" placeholder="Nome" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="surname">Sobrenome *</label>
-                          <input type="text" name="surname" placeholder="Sobrenome" required="required" class="form-control">
+                          <input type="text" name="surname" id="surname" placeholder="Sobrenome" required="required" class="form-control">
                         </div>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="surname">E-mail *</label>
-                      <input type="email" name="email" placeholder="E-mail" required="required" class="form-control">
+                      <input type="email" name="email" id="email" placeholder="E-mail" required="required" class="form-control">
                     </div>
                     <div class="form-group">
                       <label for="surname">Mensagem *</label>
-                      <textarea rows="4" name="message" placeholder="Mensagem" required="required" class="form-control"></textarea>
+                      <textarea rows="4" name="message" id="message" placeholder="Mensagem" required="required" class="form-control"></textarea>
                     </div>
                     <div class="text-center">
-                      <input type="submit" name="name" value="Enviar Mensagem" class="btn btn-primary btn-block">
+                      <!--input type="submit" name="name" value="Enviar Mensagem" class="btn btn-primary btn-block"-->
+			<button onclick="sendMail(); return false" class="btn btn-primary btn-block">Enviar Mensagem</button>    
                     </div>
                   </div>
                 </form>
@@ -234,6 +235,16 @@
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
+	    
+	function sendMail() {
+	var link = "mailto:f.m.kmacedo@hotmail.com"
+	     + "&subject=" + escape("Mensagem do site")
+	     + "&body=" + escape(document.getElementById('name').value)
+			 + escape(document.getElementById('surname').value)
+			 + escape(document.getElementById('email').value)
+			 + escape(document.getElementById('message').value);
+	window.location.href = link;}
+    
     </script>
   </body>
 </html>
